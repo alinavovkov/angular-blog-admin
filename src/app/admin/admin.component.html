@@ -1,0 +1,51 @@
+<main>
+    <div class="leftMenu">
+        <button>Blogs</button>
+    </div>
+    <div class="mainContent ">
+        <div class="contentLeft">
+            <form class="form">
+                <div class="block">
+                    <input type="text" placeholder="Title" name="titleInput" [(ngModel)]="titleInput" required>
+                </div>
+                <div class="block">
+                    <input type="text" placeholder="Text here" name="textInput" [(ngModel)]="textInput" required>
+                </div>
+                <div class="block">
+                    <input type="text" placeholder="Author here" name="authorInput" [(ngModel)]="authorInput" required>
+                </div>
+                <span>{{ errorTxt }}</span>
+                <button type="submit" value="Add" id="addPost" class="addPost" *ngIf="!clickerSave" (click)="addPost()">Add</button>
+                <button class="addPost" *ngIf="clickerSave" (click)="savePost()" > Save </button>
+
+            </form>
+        </div>
+        <div class="contentRight">
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Text</th>
+                    <th>Author</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of adminPosts">
+                        <td>{{ post.id }}</td>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.text }}</td>
+                        <td>{{ post.author }}</td>
+                        <td>
+                            <button class="button-edit" (click)="editPost(post)" > edit </button>
+                        </td>
+                        <td>
+                            <button class="button-delete" (click)="deletePost(post)"> delete </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</main>          

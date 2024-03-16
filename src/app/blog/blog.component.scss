@@ -1,0 +1,72 @@
+$font-primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-secondary: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+$primary-color: #99cde2;
+$secondary-color: #5d855d;
+$light: rgb(236, 236, 236);
+$dark: rgb(37, 37, 37);
+$grey: grey;
+
+$transparent: transparent;
+$color_light_grey: rgb(206, 206, 206);
+
+.container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    .cards {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            width: 400px;
+            height: 400px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .card-body {
+                padding: 20px;
+            }
+
+            img {
+                width: 100%;
+                height: 75%;
+                margin: 0 auto;
+                object-fit: cover;
+            }
+            .txtAuthor {
+                margin-top: 5px;
+                text-transform: uppercase;
+                color: $secondary-color;
+                font-family: $font-secondary;
+                font-size: 12px;
+            }
+            .txtTitle {
+                font-family: $font-primary;
+                font-size: 24px;
+
+            }
+            .txtText {
+                font-family: $font-primary;
+                font-size: 16px;
+
+            }
+        }
+    }
+
+    .no-discounts {
+        margin-top: 20px;
+        text-align: center;
+        color: #666;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
